@@ -91,7 +91,7 @@ open class SocketIOClient : NSObject, SocketIOClientSpec {
 
     private(set) var currentAck = -1
 
-    private lazy var logType = "SocketIOClient{\(nsp)}"
+    private lazy var logType = "SocketIOClient{\(self.nsp)}"
 
     // MARK: Initializers
 

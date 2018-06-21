@@ -42,7 +42,7 @@ public final class SocketAckEmitter : NSObject {
     ///
     /// **NOTE**: It is not safe to hold on to this view beyond the life of the socket.
     @objc
-    public private(set) lazy var rawEmitView = SocketRawAckView(socket: socket, ackNum: ackNum)
+    public private(set) lazy var rawEmitView = SocketRawAckView(socket: self.socket, ackNum: self.ackNum)
 
     // MARK: Properties
 

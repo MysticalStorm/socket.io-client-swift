@@ -196,7 +196,8 @@ open class SocketEngine : NSObject, URLSessionDelegate, SocketEnginePollable, So
         // binary in base64 string
         let noPrefix = String(message[message.index(message.startIndex, offsetBy: 2)..<message.endIndex])
 
-        if let data = Data(base64Encoded: noPrefix, options: .ignoreUnknownCharacters) {
+        if let _noPrexix = noPrefix,let data = Data(base64Encoded: _noPrexix,
+                                                    options: .ignoreUnknownCharacters) {
             client?.parseEngineBinaryData(data)
         }
     }
@@ -667,12 +668,6 @@ open class SocketEngine : NSObject, URLSessionDelegate, SocketEnginePollable, So
         } else {
             client?.engineDidClose(reason: "Socket Disconnected")
         }
-    }
-
-    // Test Properties
-
-    func setConnected(_ value: Bool) {
-        connected = value
     }
 }
 
